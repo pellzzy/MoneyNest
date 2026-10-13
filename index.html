@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoneyNest | Your Money, Made Simple</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="top">
+
+        <a href="#home" class="brand">
+            ◈ Money<span>Nest</span>
+        </a>
+
+        <nav>
+            <a href="#dashboard">Overview</a>
+            <a href="#money">Money</a>
+            <a href="#planning">Plan</a>
+            <a href="#records">Records</a>
+            <a href="#reports">Reports</a>
+        </nav>
+
+        <label class="theme-label">
+            Theme
+
+            <select id="theme">
+                <option value="bank">A - Banking</option>
+                <option value="modern">B - Modern</option>
+                <option value="luxury">C - Luxury</option>
+                <option value="colorful">D - Colourful</option>
+            </select>
+
+        </label>
+
+    </header>
+
+
+    <main>
+
+        <section id="home" class="hero">
+
+            <div>
+
+                <span class="eyebrow">
+                    YOUR EVERYDAY MONEY HELPER
+                </span>
+
+                <h1>
+                    Make your money
+                    <em>work for you.</em>
+                </h1>
+
+                <p>
+                    Know what came in, what went out,
+                    what to save, and what you can
+                    spend today. No difficult words.
+                </p>
+
+                <a href="#money" class="button light">
+                    Start with your money →
+                </a>
+
+            </div>
+
+
+            <div class="hero-side">
+
+                <p>YOUR DAILY SPENDING LIMIT</p>
+
+                <strong id="heroDaily">₦0</strong>
+
+                <small id="heroDays">
+                    Set your budget dates to begin
+                </small>
+
+                <div class="hero-line"></div>
+
+                <p id="heroAdvice">
+                    A little planning goes a long way.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section id="dashboard" class="section">
+
+            <div class="heading">
+
+                <div>
+                    <span class="eyebrow">AT A GLANCE</span>
+
+                    <h2>Your Money Overview</h2>
+
+                    <p>
+                        All your records together,
+                        made easy.
+                    </p>
+                </div>
+
+                <span id="todayLabel" class="pill"></span>
+
+            </div>
+
+
+            <div class="cards">
+
+                <article class="card">
+
+                    <span>Money Received</span>
+
+                    <strong id="totalIncome">₦0</strong>
+
+                    <small>All recorded income</small>
+
+                </article>
+
+
+                <article class="card">
+
+                    <span>Money Spent</span>
+
+                    <strong id="totalExpense">₦0</strong>
+
+                    <small>All recorded spending</small>
+
+                </article>
+
+
+                <article class="card">
+
+                    <span>Money Set Aside</span>
+
+                    <strong id="savedTotal">₦0</strong>
+
+                    <small>
+                        Savings deposits minus withdrawals
+                    </small>
+
+                </article>
+
+
+                <article class="card featured">
+
+                    <span>Money You Can Use</span>
+
+                    <strong id="available">₦0</strong>
+
+                    <small>
+                        Income - Spending - Savings
+                    </small>
+
+                </article>
+
+            </div>
+
+
+            <div id="warning" class="notice">
+                Add your income to get started.
+            </div>
+
+        </section>
+
+        <section id="money" class="section">
+
+            <div class="heading">
+
+                <div>
+
+                    <span class="eyebrow">STEP 1</span>
+
+                    <h2>Money In and Money Out</h2>
+
+                    <p>
+                        Keep a simple record of what
+                        you receive and spend.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="two">
+
+                <form id="incomeForm" class="panel">
+
+                    <h3>＋ Add Money Received</h3>
+
+                    <label>
+                        Where did it come from?
+
+                        <select name="category">
+
+                            <option>Salary</option>
+                            <option>Business</option>
+                            <option>Allowance</option>
+                            <option>Gift</option>
+                            <option>Other income</option>
+
+                        </select>
+
+                    </label>
+
+
+                    <label>
+                        Amount (₦)
+
+                        <input
+                            name="amount"
+                            type="number"
+                            min="0.01"
+                            step="0.01"
+                            placeholder="Example: 150000"
+                            required
+                        >
+
+                    </label>
+
+
+                    <label>
+                        Date
+
+                        <input
+                            name="date"
+                            type="date"
+                            required
+                        >
+
+                    </label>
+
+
+                    <label>
+                        Extra Note (Optional)
+
+                        <input
+                            name="note"
+                            type="text"
+                            maxlength="100"
+                            placeholder="Example: October salary"
+                        >
+
+                    </label>
+
+
+                    <button type="submit" class="button">
+                        Save Money Received
+                    </button>
+
+                </form>
+
+                <form id="expenseForm" class="panel">
+
+                    <h3>− Add Money Spent</h3>
+
+                    <label>
+                        What did you pay for?
+
+                        <input
+                            name="note"
+                            type="text"
+                            maxlength="100"
+                            placeholder="Example: Transport"
+                            required
+                        >
+
+                    </label>
+
+
+                    <label>
+                        Type
+
+                        <select name="category">
+
+                            <option>Food</option>
+                            <option>Transport</option>
+                            <option>School</option>
+                            <option>Bills</option>
+                            <option>Shopping</option>
+                            <option>Health</option>
+                            <option>Other</option>
+
+                        </select>
+
+                    </label>
+
+
+                    <label>
+                        Amount (₦)
+
+                        <input
+                            name="amount"
+                            type="number"
+                            min="0.01"
+                            step="0.01"
+                            required
+                        >
+
+                    </label>
+
+
+                    <label>
+                        Date
+
+                        <input
+                            name="date"
+                            type="date"
+                            required
+                        >
+
+                    </label>
+
+
+                    <button type="submit" class="button">
+                        Save Spending
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+        <section id="planning" class="section">
+
+            <div class="heading">
+
+                <div>
+
+                    <span class="eyebrow">STEP 2</span>
+
+                    <h2>Plan How Long Your Money Lasts</h2>
+
+                    <p>
+                        Choose a start and end date.
+                        Your daily limit updates as
+                        the days pass.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="two">
+
+                <form id="budgetForm" class="panel">
+
+                    <h3>📅 Your Budget Dates</h3>
+
+                    <label>
+                        Start Date
+
+                        <input
+                            name="start"
+                            type="date"
+                            required
+                        >
+
+                    </label>
+
+
+                    <label>
+                        Last Day Money Should Last
+
+                        <input
+                            name="end"
+                            type="date"
+                            required
+                        >
+
+                    </label>
+
+
+                    <label>
+                        Extra Money to Keep Aside (₦)
+
+                        <input
+                            name="reserve"
+                            type="number"
+                            min="0"
+                            step="0.01"
+                            value="0"
+                            required
+                        >
+
+                    </label>
+
+
+                    <p class="muted">
+                        Money already saved is kept separate.
+                        This extra amount is a plan,
+                        not a savings deposit.
+                    </p>
+
+
+                    <button type="submit" class="button">
+                        Update My Plan
+                    </button>
+
+                </form>
+
+                <div class="panel highlight">
+
+                    <h3>Your Spending Guide</h3>
+
+                    <div class="big-number" id="dailyLimit">
+                        ₦0
+                    </div>
+
+                    <p>
+                        Available to spend each day
+                    </p>
+
+
+                    <div class="mini-grid">
+
+                        <div>
+
+                            <span>Days Remaining</span>
+
+                            <strong id="daysLeft">—</strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>Weekly Guide</span>
+
+                            <strong id="weeklyLimit">₦0</strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>Planned Shopping</span>
+
+                            <strong id="plannedTotal">₦0</strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>Free After Plans</span>
+
+                            <strong id="freeMoney">₦0</strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <p id="planMessage" class="muted">
+                        Add income and set your dates.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="section">
+
+            <div class="heading">
+
+                <div>
+
+                    <span class="eyebrow">STEP 3</span>
+
+                    <h2>Shopping & Savings</h2>
+
+                    <p>
+                        Plan purchases and keep money
+                        for your goals.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="three">
+
+                <form id="shoppingForm" class="panel">
+
+                    <h3>🛒 Shopping List</h3>
+
+                    <label>
+                        Item
+
+                        <input
+                            name="note"
+                            type="text"
+                            maxlength="100"
+                            placeholder="Example: Rice"
+                            required
+                        >
+
+                    </label>
+
+
+                    <label>
+                        Price (₦)
+
+                        <input
+                            name="amount"
+                            type="number"
+                            min="0.01"
+                            step="0.01"
+                            required
+                        >
+
+                    </label>
+
+
+                    <button type="submit" class="button">
+                        Add to List
+                    </button>
+
+
+                    <div id="shoppingList" class="stack"></div>
+
+                </form>
+
+                <form id="savingForm" class="panel">
+
+                    <h3>🏦 Put Money Into Savings</h3>
+
+                    <label>
+                        Action
+
+                        <select name="action">
+
+                            <option value="deposit">
+                                Save Money
+                            </option>
+
+                            <option value="withdraw">
+                                Take Money From Savings
+                            </option>
+
+                        </select>
+
+                    </label>
+
+
+                    <label>
+                        Amount (₦)
+
+                        <input
+                            name="amount"
+                            type="number"
+                            min="0.01"
+                            step="0.01"
+                            required
+                        >
+
+                    </label>
+
+
+                    <label>
+                        Date
+
+                        <input
+                            name="date"
+                            type="date"
+                            required
+                        >
+
+                    </label>
+
+
+                    <button type="submit" class="button">
+                        Save Change
+                    </button>
+
+
+                    <p class="muted">
+                        Saving moves money into your savings
+                        balance. It does not count as spending.
+                    </p>
+
+                </form>
+
+                <form id="goalForm" class="panel">
+
+                    <h3>🎯 Savings Goals</h3>
+
+                    <label>
+                        What Are You Saving For?
+
+                        <input
+                            name="note"
+                            type="text"
+                            maxlength="100"
+                            placeholder="Example: Laptop"
+                            required
+                        >
+
+                    </label>
+
+
+                    <label>
+                        Target (₦)
+
+                        <input
+                            name="amount"
+                            type="number"
+                            min="0.01"
+                            step="0.01"
+                            required
+                        >
+
+                    </label>
+
+
+                    <button type="submit" class="button">
+                        Add Goal
+                    </button>
+
+
+                    <p class="muted">
+                        Goals are targets, not money
+                        already saved.
+                    </p>
+
+
+                    <div id="goalsList" class="stack"></div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+        <section class="section">
+
+            <div class="heading">
+
+                <div>
+
+                    <span class="eyebrow">MORE HELP</span>
+
+                    <h2>Bills and Smart Choices</h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="two">
+
+                <form id="billForm" class="panel">
+
+                    <h3>🧾 Bills to Pay</h3>
+
+                    <label>
+                        Bill Name
+
+                        <input
+                            name="note"
+                            type="text"
+                            maxlength="100"
+                            placeholder="Example: Electricity"
+                            required
+                        >
+
+                    </label>
+
+
+                    <label>
+                        Amount (₦)
+
+                        <input
+                            name="amount"
+                            type="number"
+                            min="0.01"
+                            step="0.01"
+                            required
+                        >
+
+                    </label>
+
+
+                    <label>
+                        Due Date
+
+                        <input
+                            name="date"
+                            type="date"
+                            required
+                        >
+
+                    </label>
+
+
+                    <button type="submit" class="button">
+                        Add Bill
+                    </button>
+
+
+                    <div id="billsList" class="stack"></div>
+
+                </form>
+
+                <div class="panel">
+
+                    <h3>🤔 Can I Afford It?</h3>
+
+                    <label>
+                        Price of the Item (₦)
+
+                        <input
+                            id="affordPrice"
+                            type="number"
+                            min="0"
+                            step="0.01"
+                            placeholder="Enter price"
+                        >
+
+                    </label>
+
+
+                    <button
+                        class="button"
+                        id="affordButton"
+                        type="button"
+                    >
+                        Check Price
+                    </button>
+
+
+                    <div
+                        id="affordResult"
+                        class="notice subtle"
+                    >
+                        Enter a price to check it
+                        against your free money.
+                    </div>
+
+
+                    <h3 class="space-top">
+                        A Small Money Tip
+                    </h3>
+
+
+                    <p id="tip">
+                        Buy what you need before
+                        what you want.
+                    </p>
+
+
+                    <button
+                        type="button"
+                        id="newTip"
+                        class="text-button"
+                    >
+                        Show Another Tip ↗
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="records" class="section">
+
+            <div class="heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        YOUR HISTORY
+                    </span>
+
+                    <h2>All Your Records</h2>
+
+                    <p>
+                        Search and correct records
+                        when needed.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="panel">
+
+                <div class="filters">
+
+                    <input
+                        id="search"
+                        type="search"
+                        placeholder="Search by name or type"
+                    >
+
+
+                    <select id="recordFilter">
+
+                        <option value="all">
+                            All Records
+                        </option>
+
+                        <option value="income">
+                            Money Received
+                        </option>
+
+                        <option value="expense">
+                            Spending
+                        </option>
+
+                        <option value="saving">
+                            Savings
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="table-wrap">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Date</th>
+                                <th>What</th>
+                                <th>Type</th>
+                                <th>Amount</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="recordsBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="reports" class="section">
+
+            <div class="heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        LOOK BACK
+                    </span>
+
+                    <h2>Your Monthly Report</h2>
+
+                    <p>
+                        See what happened this month
+                        and keep a copy.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="panel">
+
+                <div class="filters">
+
+                    <label>
+                        Choose Month
+
+                        <input
+                            id="reportMonth"
+                            type="month"
+                        >
+
+                    </label>
+
+
+                    <button
+                        id="printReport"
+                        class="button"
+                        type="button"
+                    >
+                        Print / Save as PDF
+                    </button>
+
+
+                    <button
+                        id="backup"
+                        class="button outline"
+                        type="button"
+                    >
+                        Download Backup
+                    </button>
+
+
+                    <label class="upload">
+                        Restore Backup
+
+                        <input
+                            id="restore"
+                            type="file"
+                            accept="application/json,.json"
+                        >
+
+                    </label>
+
+                </div>
+
+
+                <div id="report" class="report-area">
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <strong>◈ MoneyNest</strong>
+
+        <p>
+            Your money, made simple.
+            Records stay in this browser
+            unless you back them up.
+        </p>
+
+        <small>
+            © <span id="year"></span> MoneyNest
+        </small>
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
